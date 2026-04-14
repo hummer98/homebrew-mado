@@ -8,6 +8,7 @@ cask "mado" do
   homepage "https://github.com/hummer98/mado"
 
   depends_on arch: :arm64
+  depends_on macos: ">= :sonoma"
 
   app "mado.app"
 
