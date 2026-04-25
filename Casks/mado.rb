@@ -7,6 +7,11 @@ cask "mado" do
   desc "CLI-first Markdown viewer for macOS"
   homepage "https://github.com/hummer98/mado"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   depends_on arch: :arm64
   depends_on macos: ">= :sonoma"
 
@@ -38,16 +43,13 @@ cask "mado" do
   binary "#{staged_path}/mado"
 
   caveats <<~EOS
-    mado is currently unsigned. If macOS Gatekeeper blocks the first launch, run:
-      xattr -dr com.apple.quarantine #{appdir}/mado.app
-
     Only Apple Silicon (arm64) is supported. Intel Mac support is planned.
   EOS
 
   zap trash: [
-    "~/Library/Application Support/dev.mado.app",
-    "~/Library/Caches/dev.mado.app",
-    "~/Library/Preferences/dev.mado.app.plist",
-    "~/Library/Saved Application State/dev.mado.app.savedState",
+    "~/Library/Application Support/com.ridgeroot.mado",
+    "~/Library/Caches/com.ridgeroot.mado",
+    "~/Library/Preferences/com.ridgeroot.mado.plist",
+    "~/Library/Saved Application State/com.ridgeroot.mado.savedState",
   ]
 end
