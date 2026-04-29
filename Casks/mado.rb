@@ -1,6 +1,6 @@
 cask "mado" do
-  version "0.3.0"
-  sha256 "3bfc0e81ef2ea6f78890ebd73c8dcab69e87fb1a35c73dfced05b2adb50d2a71"
+  version "0.4.0"
+  sha256 "3611b46bb42753fdc2203e10a4e7cabe517160ca98d51d6d2853c33442f9eae8"
 
   url "https://github.com/hummer98/mado/releases/download/v#{version}/mado-v#{version}-macos-arm64.zip"
   name "Mado"
